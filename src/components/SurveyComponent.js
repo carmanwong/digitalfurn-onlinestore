@@ -1,0 +1,283 @@
+import React, { Component } from "react";
+import * as Survey from "survey-react";
+import "survey-react/survey.css";
+
+import "survey-react/modern.css";
+
+
+import "./Survey.css";
+
+class SurveyComponent extends Component {
+  state = {
+    userID: 0,
+  };
+
+  //Define Survey JSON
+  json = {
+    showQuestionNumbers: "off",
+
+    
+    completedHtml: "<br/> <br/> <br/> <br/> <br/> <br/> <h3>We sincerely thank you for participating in the study. </h3> <br/> <br/><br/> <br/>  <h5>Your ideas and thoughts will contribute to the advancement of the academic study of the gaze.   </h5>",
+
+
+    elements: [
+      {
+        type: "radiogroup",
+        name: "gender",
+        title: "Please select your gender",
+        isRequired: true,
+        colCount: 4,
+        choices: ["Male", "Female", "Other", "Prefer not to say"],
+      },
+      {
+        type: "text",
+        name: "age",
+        title: "What is your age?",
+        isRequired: true,
+      },
+      {
+        type: "text",
+        name: "profession",
+        title: "What is your profession?",
+        isRequired: true,
+      },
+      {
+        type: "text",
+        name: "shopping platform",
+        title: "Which online shopping platform do you use the most when shopping online? (e.g., Amazon, Otto, H&M, HKTVmall etc.)?",
+        isRequired: true,
+      },
+      {
+        type: "checkbox",
+        name: "shopping device",
+        title: "Which device(s) did you most often use when shopping online? ",
+        isRequired: true,
+        colCount: 5,
+        choices: ["Desktop", "Laptop", "Smartphone", "Tablet", "other"],
+      },
+      {
+        type: "dropdown",
+        name: "socialMediaTime",
+        title:
+          "How much time do you spend on Social Media per day? (eg. Facebook, Instagram, Snapchat, TikTok)/ How much time do you spent on using the Internet per day? (e.g. Facebook, Instagram, Snapchat, TikTok, online shopping or browsing media content online",
+        isRequired: true,
+        colCount: 0,
+        choices: [
+          "None",
+          "Up to 30 minutes per day",
+          "Up to 1 hour per day",
+          "Up to 1 1/2 hours per day",
+          "Up to 2 hours per day",
+          "More than 2 hours per day",
+        ],
+      },
+      {
+        type: "matrix",
+        name: "User Experience",
+        isRequired: true,
+        title:
+          "Please indicate if you agree or disagree with the following statements.",
+        columns: [
+          {
+            value: 1,
+            text: "Strongly Disagree",
+          },
+          {
+            value: 2,
+            text: "Disagree",
+          },
+          {
+            value: 3,
+            text: "Neutral",
+          },
+          {
+            value: 4,
+            text: "Agree",
+          },
+          {
+            value: 5,
+            text: "Strongly Agree",
+          },
+        ],
+        rows: [
+          {
+            value: " IT Security expertise",
+            text: "I have experience with IT Security. ",
+          },
+          {
+            value: "Computer expertise",
+            text: "I am proficient at using computer. ",
+          },
+          {
+            value: "Experience Eye Tracking",
+            text: "I have experience with Eye Tracking.",
+          },
+          {
+            value: "Eye Tracking - Eye fatigue",
+            text: "My eyes felt tired after or during the study.",
+          },
+          {
+            value: "Password gazing",
+            text: "I used the information provided to help make decision on my password creation process",
+          },
+          {
+            value: "Credit card information gazing",
+            text: "I used the information provided on the Payment page to know if the transaction is safe",
+          },
+          // {
+          //   value: "Information presented enough",
+          //   text:
+          //     "I used information provided in the interface to categorize the emails. (e.g. email subject)",
+          // },
+          // {
+          //   value: "Categorize Important",
+          //   text: " I found it easy to categorize the emails as 'important'.",
+          // },
+          // {
+          //   value: "Categorize Spam",
+          //   text: "I found it easy to categorize the emails as 'spam.'.",
+          // },
+          // {
+          //   value: "Categorize Bin",
+          //   text: "I found it easy to categorize the emails as 'bin'.",
+          // },
+        ],
+      },
+
+      // {
+      //   type: "text",
+      //   name: "Important aspects",
+      //   isRequired: true,
+      //   title:
+      //     "Which aspects of the email made you categorize it as Important? (key words are enough)",
+      // },
+      {
+        type: "text",
+        name: "Password aspects",
+        isRequired: true,
+        title:
+          "Which aspects of the information help you make a safer password choice? (key words are enough)",
+      },
+      // {
+      //   type: "text",
+      //   name: "Spam aspects",
+      //   isRequired: true,
+      //   title:
+      //     "Which aspects of the email made you categorize it as Spam? (key words are enough)",
+      // },
+      {
+        type: "text",
+        name: "Credit card payment aspects",
+        isRequired: true,
+        title:
+          "Which aspects of the payment (i.e. credit card transaction) makes you think it is safe?",
+      },
+      // {
+      //   type: "text",
+      //   name: "Bin aspects",
+      //   isRequired: true,
+      //   title:
+      //     "Which aspects of the email made you categorize it as Bin? (key words are enough)",
+      // },
+      {
+        type: "text",
+        name: "Choosing products aspects",
+        isRequired: true,
+        title:
+          "Which aspects of the product makes you make a purchase decision? (key words are enough)",
+      },
+      // {
+      //   type: "radiogroup",
+      //   name: "Reimbursement",
+      //   title:
+      //     "How do you want to get reimbursed? (Any information given here will not be connected to the study data. Also you will receive your reimbursement within two weeks.) ",
+      //   isRequired: true,
+      //   colCount: 4,
+      //   choices: ["MMI-Points", "5€ PayPal", "5€ Amazon", "None"],
+      // },
+      {
+        name: "email",
+        type: "text",
+        isRequired: true,
+        visibleIf:
+          "{Reimbursement}='MMI-Points' or {Reimbursement}='5€ PayPal' or {Reimbursement}='5€ Amazon' ",
+        title: "Your E-mail:",
+        placeHolder: "youremail@domain.org",
+      },
+      {
+        type: "text",
+        name: "MMI Name",
+        isRequired: true,
+        visibleIf: "{Reimbursement}='MMI-Points'",
+        title: "Please insert your first and last name here.",
+      },
+      {
+        type: "text",
+        name: "MMI Matrikelnummer",
+        isRequired: true,
+        visibleIf: "{Reimbursement}='MMI-Points'",
+        title: "Please insert your enrolement number (Matrikelnummer) here.",
+      },
+      {
+        type: "text",
+        name: "PayPal account",
+        isRequired: true,
+        visibleIf: "{Reimbursement}='5€ PayPal'",
+        title: "Please insert your PayPal.Me-Link here.",
+      },
+    ],
+  };
+
+  componentDidMount() {
+    let userID = this.props.userInfo.userID;
+    this.setState({ userID: userID });
+  }
+
+  //Define a callback methods on survey complete
+  onComplete = (survey, options) => {
+    //Write survey results into database
+
+    //console.log("Survey results: " + JSON.stringify(survey.data));
+    //Send to Server
+    const userID = window.sessionStorage.getItem("useridnr");
+    console.log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" + userID)
+
+    const data = {
+      //userID: this.state.userID,
+      userID: userID,
+      userAnswers: survey.data,
+    };
+
+	const response = fetch("http://localhost:3333/SurveyData", {								//{o}
+    //const response = fetch("https://shopping-study.ddns.net:444/SurveyData", {
+
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then(console.log("sentSurveyToServer"));
+  };
+
+  render() {
+    //Create the model and pass it into react Survey component
+    //You may create survey model outside the render function and use it in your App or component
+    //The most model properties are reactive, on their change the component will change UI when needed.
+    var model = new Survey.Model(this.json);
+    return <Survey.Survey model={model} onComplete={this.onComplete} />;
+    /*
+  //The alternative way. react Survey component will create survey model internally
+  return (<Survey.Survey json={this.json} onComplete={this.onComplete}/>);
+  */
+    //You may pass model properties directly into component or set it into model
+    // <Survey.Survey model={model} mode="display"/>
+    //or
+    // model.mode="display"
+    // <Survey.Survey model={model}/>
+    // You may change model properties outside render function.
+    //If needed react Survey Component will change its behavior and change UI.
+  }
+}
+
+export default SurveyComponent;

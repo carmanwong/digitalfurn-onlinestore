@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/InBetweenPage.css"],"names":[],"mappings":"AAAA,0BACI,gBACF,CAEA,KACE,eACF","file":"main.e1c01bcd.chunk.css","sourcesContent":[".InBetweenPage {\n    margin-left: 10px;\n  }\n  \n  html {\n    background: white;\n  }\n  "]}

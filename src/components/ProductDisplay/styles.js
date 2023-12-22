@@ -1,0 +1,151 @@
+import { makeStyles } from '@material-ui/core/styles';
+
+
+export default makeStyles((theme) => ({
+  toolbar: theme.mixins.toolbar,
+
+  content: {
+    flexGrow: 1,
+    backgroundColor: 'white',
+    padding: theme.spacing(3),
+  },
+
+
+  title: {
+    // marginTop: '5%',
+    position: 'absolute',
+    textDecoration: 'none',
+    color: '#000000',
+    // padding: '5px',
+    fontFamily: 'Libre Baskerville',
+    fontSize: '25px',
+    // borderBottom: 'black',
+    // borderBottomWidth: '1px',
+    // borderBottomStyle: 'solid',
+  },
+  container: {
+    // borderTop: 'black',
+    borderTopWidth: '1px',
+    // borderTopStyle: 'solid',
+    marginTop: '10px',
+    padding:'0px',
+    color: '#000000',
+    fontFamily: 'Libre Baskerville',
+    fontSize: '20px',
+    // marginTop: '14%',
+    display: 'flex',
+    flexDirection: 'row',
+    // backgroundColor: 'red',
+    justifyContent: 'center',
+    // alignItems: 'center',
+    backgroundColor: 'white',
+
+  },
+  leftBox: {
+    flexDirection: 'row',
+    // backgroundColor: 'blue',
+    padding: '5px',
+    width: '50%',
+    padding: '5%',
+    borderRightColor: 'black',
+    borderRightWidth: '1px',
+    // borderRightStyle: 'solid',
+  },
+  rightBox: {
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    // backgroundColor: 'green',
+    padding: '5px',
+    width: '50%',
+    height: '50%',
+    padding: '5%'
+  },
+  emptyButton: {
+    minWidth: '150px',
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: '5px',
+    },
+    [theme.breakpoints.up('xs')]: {
+      marginRight: '20px',
+    },
+  },
+  checkoutButton: {
+    minWidth: '150px',
+  },
+  link: {
+    textDecoration: 'none',
+  },
+  cardDetails: {
+    display: 'flex',
+    marginTop: '10%',
+    width: '100%',
+    justifyContent: 'space-between',
+  },
+  titleProduct: {
+    display: 'block',
+    position: 'relative',
+    fontFamily: 'Hind,sans-serif',
+    color: '#191919',
+    marginBottom: '0',
+    fontSize: '30px',
+    lineHeight: '40px',
+    fontWeight: '500',
+    marginTop: '19px',
+    color: '#191919',
+  },
+  subTitle: {
+    marginTop: '19px',
+    color: '#191919',
+    fontFamily: 'Hind,sans-serif',
+    fontSize: '14px',
+    lineHeight: '22px',
+    fontWeight: '300',
+  },
+  priceProduct: {
+    display: 'block',
+    position: 'relative',
+    fontFamily: 'Hind,sans-serif',
+    color: '#191919',
+    marginBottom: '0',
+    fontSize: '30px',
+    lineHeight: '40px',
+    fontWeight: '500',
+    marginTop: '19px',
+    color: '#2879fe',
+  },
+  descriptionProduct: {
+    marginTop: '11 px',
+    color: '#777',
+    fontFamily: 'Hind,sans-serif',
+    fontSize: '14px',
+    lineHeight: '22px',
+    fontWeight: '300',
+    textAlign: 'left',
+  },
+  addButton: {
+    borderRadius: '10px',
+    width: '100%',
+    padding: '7px 10px',
+    textAlign: 'center',
+    border: 'none',
+    height: '50px',
+    padding: '7px 10px',
+    fontSize: '14px',
+    margin: '10px 0 0 0',
+    backgroundColor: '#2879fe',
+    color: '#fff',
+    outline: 'none',
+    fontFamily: 'Hind,sans-serif',
+    fontSize: '14px',
+    lineHeight: '22px',
+    fontWeight: '400',
+    letterSpacing: '.03em',
+    display: 'block',
+    alignItems: 'center',
+    '&:hover': {
+      backgroundColor: '#2267d8',
+
+    },
+  },
+}));
+

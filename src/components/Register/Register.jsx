@@ -1,0 +1,449 @@
+import React, { useState, useEffect } from 'react';
+import { Container, Typography, Button, Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import useStyles from './styles';
+import { useHistory } from "react-router-dom";
+import {reportClickEvent,reportHoverEvent} from '../../eventTracking'
+
+
+const Register = ({ }) => {
+
+    const classes = useStyles();
+    const history = useHistory();
+
+    const [disPlayStatus, setDisPlayStatus] = useState(0);
+    const [disPlayPrivacyPolicy, setDisPlayPrivacyPolicy] = useState(0);
+
+
+
+
+
+    const MembershipTersmDiv = ({ }) => {
+        return (
+            //after clicked the terms
+            <div><button className={classes.crossButton} onClick={function () { reportClickEvent("REGISTER_closeMembershipTermButton"); setDisPlayStatus(0); }} onMouseEnter={function () { reportHoverEvent("REGISTER_closeMembershipTermButton") }}>X</button>
+                <div id = "membershipWindow" className={classes.divStyle} onScroll={function(){let scr = document.getElementById("membershipWindow").scrollTop;console.log(scr);window.sessionStorage.setItem("membershipScroll", scr)}}>
+                    1 INTRODUCTION
+                <div>1.1 Welcome to the loyalty program of DigitFurns., with company number 000000-0000 and registered office at Abc Street, 80333 Munich, Germany (“Loyalty Programme”). By signing up for membership, you agree to these Terms and Conditions.
+                </div><div>1.2 Membership is free and not linked to a purchase.
+                </div><div>1.3 If you participate in the DigitFurns. loyalty program, you can collect points that can be used to reach different membership levels. Depending on your membership level, you can use various offers, services and more from DigitFurns. or DigitFurns. partner companies. As a registered member, you will receive a customized DigitFurns. brand experience, including personalized offers and recommendations, which we will email to you and/or display on our DigitFurns. app and/or on your social media feed. As a member, you will receive digital invoices for your purchases in our shops and online. You can also access your order history in your member account (“My Account”) on hm.com and in the DigitFurns. app. If you are logged in and add items to your shopping cart, these will be saved until your next visit. Please note that these items will not be reserved for you and may therefore be sold out later. You can find more information about current offers under "My Account ”.
+                </div><div>1.4 Information on how DigitFurns. processes your personal data can be found in our privacy policy .
+                </div><div>2 MEMBERSHIP2.1. Membership is limited to individuals acting as individuals and not on behalf of a business, who have a current and valid email account and are either 18 years of age or at least 16 years of age and have the consent of their parent, guardian or have a legal representative. DigitFurns. reserves the right to request written confirmation of this consent. Employees, supervisors, directors, officers and representatives of DigitFurns. can become members, but can be excluded from certain promotions.
+                </div><div>2.2 By submitting your application you confirm that you are at least 18 years of age or that you are 16 years of age and have obtained the consent of your parent, guardian or legal representative and that you agree to these Terms and Conditions.
+                </div><div>2.3 Membership is personal, non-transferable and is subject to these terms and conditions and any other rules, regulations, policies and procedures of DigitFurns. that you agree to by shopping and using offers, coupons and other services. Membership is limited to one per person per email address.
+                </div><div>2.4 Companies, groups, associations or other organizations that make purchases for commercial purposes or bulk purchases are excluded from membership. Membership may not be used for resale or for any other commercial purpose.
+                </div><div>2.5 Members are responsible for keeping their email address and contact details up to date. This is a condition of membership.
+                </div><div>2.6 You are also liable for all activities carried out through your member account. This means that you are also responsible for taking all steps to ensure the security and confidentiality of login details such as email address and password. We recommend using a password that you don't use for other accounts. If your password or account has been hacked, you should change it quickly or contact customer service for further assistance.
+                </div><div>3 DigitFurns. LOYALTY PROGRAM IN GERMANY  3.1 Membership is a national program and is only valid for purchases online at DigitFurns. website and in DigitFurns. stores in worldwide. You can only earn points when you shop as a registered member in DigitFurns. stores in worldwide or online, and for participating in activities that DigitFurns. announces from time to time. Points are not awarded for the purchase of gift cards.
+                </div><div>3.2 The points earned are personal and cannot be transferred to another person or member.
+                </div><div> 3.3 The points you receive when purchasing an item will be deducted from your account when you return the item.
+                </div><div>3.4 In order to collect points, you must show your membership ID in an DigitFurns. or DigitFurns. store or log in to your account before making a purchase. You can view your points balance at any time under "My Account".
+                </div><div> 4 POINTS, MEMBERSHIP LEVELS AND BONUS CHECKS4.1 The collected points count towards achieving the status "Plus Member" as well as for bonus checks (discount vouchers).
+                </div><div>4.2 The date you become a member is considered the start date for a membership year. The membership year is the twelve months after the start date in each subsequent year. Your membership level is based on the points you have earned during the current or previous membership year, whichever is higher. If you are a new member or have not accumulated enough points for the second membership level (Plus Member), your membership will start at the first level (Member). If you have achieved the second level during a membership year, you will remain at the second level for the remainder of the membership year and the following membership year.
+               </div><div>4.3 At the end of a membership year, all points for the next membership level for the following year will be reset to zero.
+                </div><div>4.4 Bonus Check points are valid until the next start date.
+                </div><div>4.5 When you have accumulated 250 points, a €5 bonus check will be issued and displayed under "My Account". You can redeem the bonus check in DigitFurns. and DigitFurns. stores as well as online.
+                </div><div>4.6 The bonus check will be issued 30 days after the date on which the applicable point balance is reached and will be valid for 6 months from that point. You can only receive 5 bonus checks per calendar month and a maximum of 20 coupons in any 12 month period.
+                </div><div>4.7 Bonus Checks cannot be exchanged for cash or gift cards or used for purchases of lesser value than the Bonus Check. The total must be €1 higher after cashing the bonus check. Non-commercial goods, such as shopping bags in stores, do not count towards the amount.
+                </div><div>4.8 Each bonus check can only be redeemed once and applies to all items in the order. The discount is distributed proportionally to all items in the purchase, so that the discount percentage is the same for all items in the order. The respective reduction of the individual items of a purchase remains, even if individual items of the purchase are returned. The bonus check discount benefit is not redistributed to the remaining items if an item is returned.
+                </div><div>4.9 When items are returned, the discount benefit (value) of the bonus check is forfeited. We only refund the amount you paid for the item, not the bonus check discount benefit. If you activate the bonus check to redeem it at an DigitFurns. store, it must be redeemed at checkout within 15 minutes of activation. Otherwise it will be irretrievably deleted and expire. Hard copies or screenshots of the bonus check will not be accepted. The legal process is excluded.
+                </div><div>4.10 The bonus check cannot be used to purchase DigitFurns. gift cards or redeemed for previous purchases.
+                </div><div>5 MODIFICATIONS, CANCELLATION AND/OR EXCLUSION FROM THE DigitFurns. LOYALTY PROGRAM5.1 You can cancel your membership at any time, either under "My Account" on hm.com [insert link] or by contacting our customer service. After canceling your membership, you can only order as a guest on hm.com.
+                </div><div>5.2 If you cancel your membership, any remaining points in your account will be forfeited. In addition, the loan applications will be cancelled.
+                </div><div>5.3 DigitFurns. may, at any time and in its sole discretion, modify, limit or suspend the DigitFurns. Loyalty Program or the Terms of Use if changes in the law, changes in DigitFurns.'s range of services or the introduction of new services so require. This change will take effect after 14 business days from the date you were notified of this change via app, online, email (or a combination of these). If you do not accept the changes, you have the right to cancel the membership.
+                </div><div>5.4 DigitFurns. reserves the right to make minor changes to the Loyalty Program and the Terms and Conditions without notice, provided that such changes do not adversely affect membership. Please inform yourself regularly about the General Terms and Conditions. You can find the current version on hm.com.
+                </div><div>5.5 Any proven misuse of the DigitFurns. Loyalty Scheme, proven or reasonably suspected fraud, non-compliance with the Terms of Use, membership inactivity, false information or behavior harmful to DigitFurns.'s interests may result in cancellation of membership and further participation in the DigitFurns. Loyalty Scheme. If membership is revoked, all accumulated points will automatically expire under "My Account".
+                </div><div>5.6 We reserve the right to restrict your access to shop through your membership on hm.com at any time without notice and in our sole discretion for any reason. Reasons for a restriction may include, but are not limited to: (1) frequent and/or high return rates deemed unusual, (2) conduct reflecting an intent to make a profit by purchasing our products, or (3) suspected Existence of multiple accounts and/or registration of a new account by a suspended user. We also reserve the right to cancel orders placed through your member account and orders placed as a guest using the same billing address or payment method for the same reasons.
+                </div><div>6 LIMITATION OF LIABILITY 6.1 DigitFurns. shall not be liable for system failures or failures of the Loyalty Program nor for the consequences thereof. DigitFurns. shall not be liable for any loss or damage arising out of any suspension, modification, termination or in connection with the Loyalty Scheme except where liability cannot be excluded in accordance with applicable law.
+                </div><div>7 APPLICABLE LAW7.1 These Terms of Use are subject to German law. Any dispute, claim or controversy arising out of or in connection with these Terms of Use or participation as an DigitFurns. Member shall be settled by the competent court in Germany.
+                </div><div>7.2 If you wish to make a claim regarding our loyalty program and the matter cannot be resolved with DigitFurns. customer service, you can submit your complaint to the EU's online dispute resolution portal (ODR platform, Online Dispute Resolution). With the help of the ODR platform, consumers and traders within the EU can try to reach an out-of-court settlement in disputes relating to online purchases. The user-friendly and interactive website serves as a one-stop shop, made available free of charge in all official EU languages. With the help of the ODR platform, consumers and merchants can find a dispute resolution body and go through the process of finding a solution together. The ODR platform is available at: http://ec.europa.eu/odr
+                </div><div>7.3 The invalidity or unenforceability of individual contractual provisions does not affect the validity of the remaining contractual provisions. In such event, the invalid or unenforceable provision will be replaced by the parties with a valid or enforceable provision.
+                </div><div>8 CONTACT8.1 If you have any questions about the loyalty program, please contact our DigitFurns. customer service .
+                </div>
+                    <div>11/01/2022</div>
+
+
+
+                </div>
+            </div>
+        );
+    }
+
+    const NoMembershipTersmDiv = ({ displayMembershipTerms }) => {
+        return (
+            <div>
+            </div>
+        );
+    }
+
+
+    const PrivacyPolicyDiv = ({ }) => {
+        return (
+            //after clicked the terms
+            <div><button className={classes.crossButton} onClick={function () { reportClickEvent("REGISTER_closePrivacyPolicyButton"); setDisPlayPrivacyPolicy(0); }} onMouseEnter={function () { reportHoverEvent("REGISTER_closePrivacyPolicyButton") }}>X</button>
+                <div id = "termsWindow" className={classes.divStyle} onScroll={function(){let scr = document.getElementById("termsWindow").scrollTop;console.log(scr);window.sessionStorage.setItem("termsScroll", scr)}}>
+                    DigitFurns. PRIVACY STATEMENT
+
+                <div>Commitment to data protection and the protection of your privacy The protection of personal data and your privacy is a top priority for the H&M Group. With this privacy statement we want to give you clear, consistent and transparent information about the collection, use, processing, storage etc. of personal data of customers of the DgitFruns. group.
+                    </div><div>For the purposes of this Privacy Policy, “DigitFurns. Customer” means a past, current and potential customer or user of a product or service offered by an DigitFurns. subsidiary or brand, or a visitor to one of our official websites or stores or a member of a loyalty program or community.
+                         </div><div>PrinciplesThe DigitFurns. commitment to privacy and data protection is based on the following principles:
+                    DigitFurns. uses personal data in a lawful, fair, correct and transparent manner.DigitFurns. does not collect more personal data than is necessary and only for a legitimate purpose.
+                       </div><div>DigitFurns. does not store more data than is necessary, nor for longer than is necessary.DigitFurns. protects personal data with appropriate security measures.
+                     </div><div>Why do we process your data?We use and process your personal data in connection with you, for example when you buy our products online or in our stores, visit our website or contact our customer service. Examples of personal information include full name, address, email address, phone number, social security number, payment information, your purchase, order, and usage history, IP address, Member ID, and other case-related information (e.g., information you provide when contacting our customer service).
+                    In the individual sections of this data protection declaration, you will be informed about the purpose of the respective data processing.
+</div><div>Who is responsible for the processing of your personal data?The Swedish company DigitFurns. is primarily responsible for the processing of the personal data in the context of this privacy statement.
+                    In each section of this privacy statement you will be informed if instead DigitFurns. is responsible for the processing of your personal data, the attribution of responsibilities and the modalities for exercising rights.
+    </div><div>Information on the data protection officer(s) of the DigitFurns.:
+                    DigitFurns.ACC Street
+                    10638 MunichGermany Company Register:Register Registration number: 000000-0000 Authorizedrepresentative: DigitFurns.VAT number: SE00000000
+                    DigitFurns.Address: ACC Street, 106 38 MunichVAT number: 000000
+The DigitFurns. Data Protection Officer(s) referred to above are referred to individually or collectively as "DigitFurns.", "we", "us" etc. in this privacy notice. 
+                    In certain circumstances, responsibility for data protection and your privacy is shared with third parties, e.g. B. with banks, financial institutions, postal services or electronic communication providers. Further information can be found in the individual sections of this data protection declaration.
+                         </div><div>Where do we process your data?The personal information we collect from you is generally stored in a country within the European Union (EU) or the European Economic Area (EEA), but may be transferred to and processed in a country outside the EU/EEA if necessary will. Any such transfer of your personal information will be in compliance with applicable laws and your statutory rights.
+From time to time, we may transfer personal data from the EU/EEA to a third country that has not been determined by the European Commission as a safe country for such transfers (adequacy decision). Whenever applicable,DigitFurns. adheres to the  EU Standard Contractual Clauses to ensure comparable protection to that afforded in the EU/EEA or other legal bases for a transfer. 
+     </div><div>Who has access to your data?Your personal data is available and accessible only to those who need the data for the intended processing purpose. Where necessary, your personal data may be shared with DigitFurns.companies and brands, service providers and contractors (processors and sub-processors) who perform specific tasks on behalf of DigitFurns. and independent third parties.
+In addition, we may also disclose personal information to third parties if we have reason to believe that the use or disclosure of such information is necessary or expedient to: (i) conduct investigations into possible violations of the law; (ii) identify, contact or take legal action against any person who may be in breach of any agreement with us; (iii) investigate security breaches or cooperate with government authorities in a legal matter; or (iv) protect our rights, safety or property, including to prevent fraud.
+We reserve the right to port any personal information we hold about you in the event we merge with a third party, are acquired by a third party, or have another business transaction, e.g. a reorganization, or if such a transaction is proposed. 
+                    </div><div>What is the legal basis for processing?DigitFurns. must not collect, process, use, store, etc. personal data without a valid legal basis. Lawfulness can be derived from your consent, a contract, legal obligations or our legitimate interest as a company. For each specific processing purpose for the processing of personal data that we collect from you, we will tell you on what legal basis this is done and what your rights are and whether the provision of personal data is required by law or necessary for the conclusion of a contract. We also state whether you are obliged to provide the personal data and what the consequences are if you do not provide them.
+
+      </div><div>What rights do you have?Right to information : You have the right to request information about your personal data stored by us at any time. Here you can request your personal data and have it sent to you by e-mail.
+Right to portability: If DigitFurns. processes your personal data automatically with your consent or based on a corresponding agreement, you have the right to request a copy of your data in a structured, commonly used and machine-readable format, which is sent to you or another party. This only affects the personal data that you have submitted to us.
+Right to rectification:  You have the right to request rectification of your personal data if it is inaccurate. This includes the right to have incomplete personal data completed. If you have an DigitFurns. account or are a member, you can edit your personal data in your account and membership area.
+Right to erasure: You have the right to have personal data processed by DigitFurns. erased at any time, except in the following cases:
+* You are in contact with Customer Service to resolve a matter.* You have placed an order that has not yet been shipped or only partially shipped.* You have outstanding payments at DigitFurns., regardless of the payment method.* You have misused our services in the last four years or there is a suspicion of such misuse.* You have transferred your liabilities to a third party in the last three years (one year for deceased customers).*Your loan application has been rejected within the last three months.* Where you have made purchases, we retain your personal information related to your transaction in accordance with accounting requirements.
+Right to object to processing of your data based on legitimate interest:You have the right to object to the processing of your personal data based on DigitFurns.'s legitimate interest. DigitFurns. will no longer process the personal data unless we can demonstrate legitimate grounds for processing that outweigh your interests and rights, or to defend legal claims.
+Right to restriction: You have the right to request that DigitFurns. restricts the processing of your personal data in the following circumstances:
+* If you object to processing based on DigitFurns.'s legitimate interest, DigitFurns. will restrict the processing of such data pending verification of legitimate interest.* If you inform us that your personal data is incorrect, DigitFurns. must restrict all processing of the data concerned until it has been clarified whether the personal data is in fact incorrect.* If the processing is unlawful, you can object to the deletion of personal data and instead request that the use of your personal data be restricted.* When DigitFurns. no longer needs the personal data, but it is necessary for you to defend your legal claims.                  </div><div>3.2 The points earned are personal and cannot be transferred to another person or member.
+                                    </div><div> How can you exercise your rights?We take data protection very seriously. Therefore, we have dedicated customer service representatives who will deal with your requests regarding your above rights. You can contact them at any time via dataprotection.de@hm.com . If you have an DigitFurns. account or are an DigitFurns. member, you can exercise your right of access, your right to portability and your right to rectification on the relevant pages in your account. You can also delete your account there.
+                                          </div><div>.Data Protection Officer:We have appointed a data protection officer to ensure that we process your personal data openly, accurately and properly. You can reach our data protection officer at dataprotection.de@hm.com . Please include "DPO" in the subject line.      </div><div> 4 POINTS, MEMBERSHIP LEVELS AND BONUS CHECKS4.1 The collected points count towards achieving the status "Plus Member" as well as for bonus checks (discount vouchers).
+                </div><div>Updating our privacy policy:From time to time we need to update our privacy policy. The latest version of the privacy policy is always available on our website. We will inform you about any significant changes to the data protection declaration.
+                      </div>
+                    <div>The history of changes can be found in the Changes section of this privacy policy.</div>
+
+
+
+                </div>
+            </div>
+        );
+    }
+
+    const NoPrivacyPolicyDiv = ({ displayMembershipTerms }) => {
+        return (
+            <div>
+            </div>
+        );
+    }
+
+
+    const appStyle = {
+        // height: '250px',
+        // display: 'flex'
+    };
+
+    const formStyle = {
+
+        margin: 'auto',
+        paddingTop: '10%',
+        display: 'block'
+    };
+
+    const labelStyle = {
+        margin: '10px 0 5px 0',
+        fontSize: '15px',
+    };
+
+    const inputStyle = {
+        margin: '5px 0 10px 0',
+        padding: '5px',
+        border: '1px solid #bfbfbf',
+        borderRadius: '3px',
+        boxSizing: 'border-box',
+        width: '100%'
+    };
+
+    const submitStyle = {
+        margin: '5px',
+        background: 'transparent',
+        color: '#2879fe',
+        border: '2px solid #2879fe',
+        height: '40px',
+        paddingLeft: '29px',
+        paddingRight: '29px',
+        fontSize: '14px',
+        fontWeight: '400',
+        letterSpacing: '.03em',
+        borderRadius: '6px',
+        '&:hover': {
+            backgroundColor: '#191919',
+            color: '#fff',
+            borderColor: '#191919',
+            outline: 'none',
+        }
+    };
+
+
+
+    const createStyle = {
+        margin: '10px 0 0 0',
+        padding: '7px 10px',
+        border: '1px solid #efffff',
+        borderRadius: '3px',
+        background: '#ebebeb',
+        width: '100%',
+        fontSize: '15px',
+        color: 'black',
+        display: 'block'
+    };
+
+/*
+    const Field = React.forwardRef(({ label, type }, ref) => {
+        return (
+            <div>
+                <label style={labelStyle} >{label}</label>
+                <input className={classes.formControl} ref={ref} type={type} style={inputStyle} onClick={function () { reportClickEvent("REGISTER_" ) }} onMouseEnter={function () { reportHoverEvent("REGISTER_") }}/>
+            </div>
+        );
+    });*/
+
+    const Field2 = React.forwardRef(({ label, type }, ref) => {
+        return (
+            <div>
+                <label style={labelStyle} >{label}</label>
+                <input className={classes.formControl} ref={ref} type={type} style={inputStyle} onClick={function () { reportClickEvent("REGISTER_birthday") }} onMouseEnter={function () { reportHoverEvent("REGISTER_Birthday") }}/>
+            </div>
+        );
+    });
+
+    const Form = ({ onSubmit }) => {
+        const userFirstnameRef = React.useRef();
+        const userLastnameRef = React.useRef();
+        const userEmailRef = React.useRef();
+        const passwordRef = React.useRef();
+        const birthdayRef = React.useRef();
+        const recieveOfferRef = React.useRef();
+
+        const handleSubmit = e => {
+            e.preventDefault();
+            const data = {
+                userFirstnameRef: userFirstnameRef.current.value,
+                userLastnameRef: userLastnameRef.current.value,
+                userEmailRef: userEmailRef.current.value,
+                password: passwordRef.current.value,
+                birthday: birthdayRef.current.value,
+                recieveOffer: recieveOfferRef.current.value,
+
+
+            };
+            onSubmit(data);
+        };
+        return (
+            <form style={formStyle} onSubmit={handleSubmit} >
+                <div className={classes.formGroup}>
+
+                    <div className={classes.requiredFields}>* Required Fields</div>
+                    <div>
+                        <label style={labelStyle} >{"FIRST NAME"}</label>
+                        <input  className={classes.formControl} onClick={function () { reportClickEvent("REGISTER_Firstname") }} onMouseEnter={function () { reportHoverEvent("REGISTER_Firstname") }} ref={userFirstnameRef} type={"text"} style={inputStyle}  />
+                    </div>
+                    <br /><br />
+                    <div className={classes.requiredFields}>* Required Fields</div>
+                    <div>
+                        <label style={labelStyle} >{"LAST NAME"}</label>
+                        <input  className={classes.formControl} onClick={function () { reportClickEvent("REGISTER_LastName") }} onMouseEnter={function () { reportHoverEvent("REGISTER_Lastname") }} ref={userLastnameRef} type={"text"} style={inputStyle}  />
+                    </div>
+                    <div className={classes.requiredFields}>* Required Fields</div>
+                    <div>
+                        <label style={labelStyle} >{"EMAIL ADDRESS"}</label>
+                        <input  className={classes.formControl} onClick={function () { reportClickEvent("REGISTER_LastName") }} onMouseEnter={function () { reportHoverEvent("REGISTER_Lastname") }} ref={userEmailRef} type={"text"} style={inputStyle} />
+                    </div>
+                     <div className={classes.requiredFields}>* Required Fields</div>
+                    <div className={classes.requiredFields}>At least 8 characters, 1 digit, 1 capital letter, 1 lowercase letter and a special character (e.g.!@#$%^) <br/><br/></div>        
+                    <div>
+                        <label style={labelStyle} >{"PASSWORD"}</label>
+                        <input  className={classes.formControl} onClick={function () { reportClickEvent("REGISTER_Password") }} onMouseEnter={function () { reportHoverEvent("REGISTER_Password") }} ref={passwordRef} type={"text"} style={inputStyle} />
+                    </div>
+                    <Field2 ref={birthdayRef} label="BIRTHDAY" type="date"  />
+                    <div className={classes.message}> DigiFurns. would like to give you a special treat for your birthday </div>
+                    <br />
+                    <div><br />
+
+                        <div className={classes.message2}>
+                            <input ref={recieveOfferRef} label="" type="checkbox" onClick={function () { reportClickEvent("REGISTER_recieveOffer") }} onMouseEnter={function () { reportHoverEvent("REGISTER_RecieveOffer") }} />
+
+                    Yes, I would like to receive offers, inspiring updates and invitations to sales by email.
+                    <br /><br />
+                    Want some decoration inspiration in your inbox? No problem, just subscribe to our newsletter. Discover the latest trends in interior design. You'll also receive bonus checks, birthday offers, and special invitations to events and sales — straight to your inbox!
+                    </div>
+                        <br />
+                    </div>
+
+
+                    <div className={classes.message3}> By clicking "Register Now" I agree to the DigitFurns.<button className={classes.membershipTerms} onClick={function () { reportClickEvent("REGISTER_membershipTerms"); setDisPlayStatus(1); }} onMouseEnter={function () { reportHoverEvent("REGISTER_membershipTerms") }}>      Membership Terms and Conditions</button>.</div>
+
+                    <div className={classes.message3}>
+                        {disPlayStatus ? (
+                            <MembershipTersmDiv />
+                        ) : (
+                                <NoMembershipTersmDiv />
+                            )}
+                    </div>
+
+                    <br />
+                    <div className={classes.message3}> In order to offer you all the benefits of membership, we process your personal data in accordance with DigitFurn.'s<button className={classes.membershipTerms} onClick={function () { reportClickEvent("REGISTER_privacyPolicyButton"); setDisPlayPrivacyPolicy(1); }} onMouseEnter={function () { reportHoverEvent("REGISTER_privacyPolicyButton") }}>     privacy policy </button>.</div>
+
+                    <div className={classes.message3}>
+                        {disPlayPrivacyPolicy ? (
+                            <PrivacyPolicyDiv />
+                        ) : (
+                                <NoPrivacyPolicyDiv />
+                            )}
+                    </div>
+
+
+                    <br /><br />
+
+                    <button className={classes.button} style={submitStyle} type="submit" onClick={function () { reportClickEvent("REGISTER_Register") }} onMouseEnter={function () { reportHoverEvent("REGISTER_Register") }}>Register Now</button>
+                </div>
+            </form>
+        );
+    };
+
+    const handleSubmit = async (data) => {
+
+
+
+        const json = JSON.stringify(data, null, 8);
+
+        var event = JSON.parse(json);
+
+        console.log(event);
+
+
+        if (event.userFirstnameRef !== "") {
+            if (event.userLastnameRef !== "") {
+                if (event.userEmailRef !== "") {
+                    if (event.passwordRef !== "") {
+                        console.log("field are filled");
+
+                        let jsonSent = {
+                            email: event.userEmailRef,
+                            password: event.passwordRef,
+
+                        }
+                        console.log("------------------sssus--------")
+                        
+                        console.log(jsonSent)
+                        console.log(data)
+
+						const post = await fetch("http://localhost:3333/register",								//{o}
+                        //const post = await fetch("https://shopping-study.ddns.net:444/register",
+                        {
+                            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                            mode: 'cors', // no-cors, *cors, same-origin
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)// body data type must match "Content-Type" header
+                        });
+                        console.log(event.userFirstnameRef);
+                        console.log(event.password);
+                        history.push("/login");
+                    }
+                }
+            }
+        }
+        else {
+            console.log("field not filled");
+
+        }
+
+
+
+
+    };
+
+
+    console.log("entered the login page");
+
+
+
+    return (
+        <Container className={classes.bigcontainer} >
+            <div className={classes.toolbar} />
+
+            <div className={classes.title} onMouseEnter={function () { reportHoverEvent("REGISTER_Title") }}>
+                Become a member now
+                    </div>
+
+            <p className={classes.box1}>Become a member and never miss out on offers, discounts or bonus vouchers again.</p>
+
+
+            <div className={classes.container}>
+                <div className={classes.leftBox}  >
+                
+                    <div className={classes.subTitle}>
+                        PERSONAL INFORMATION
+                        </div>
+
+
+                    <div className={classes.form}>
+                        <div className="justify-content-center row">
+                            <div className="col-lg-6 col-md-8">
+                                <div className="tt-item">
+                                    <div className="form-default">
+                                        {/* <form action="/account/login" id="contactform" method="post" noValidate> */}
+
+
+                                        <div>
+                                            <div style={appStyle}>
+                                                <Form onSubmit={handleSubmit} />
+                                            </div>
+
+                                        </div>
+
+                                        <div className="align-self-center col-auto">
+                                            <div className={classes.formGroup}>
+                                                <div className={classes.additionalLinks}>
+                                                    <div onMouseEnter={function () { reportHoverEvent("REGISTER_ReturnToStore") }}>or <a href="/login">Return to Login</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* 
+                                            <div className={classes.formGroup}>
+                                                <label htmlFor="loginInputName">FIRST NAME *</label>
+                                                <div className={classes.requiredFields}>* Required Fields</div>
+
+
+                                                <input type="text" name="name" id="loginInputName" className={classes.formControl} placeholder="Enter First Name" required />
+                                            </div>
+                                            <div className={classes.formGroup}><label htmlFor="loginLastName">LAST NAME *</label><input type="text" name="lastName" id="loginLastName" className={classes.formControl} placeholder="Enter Last Name" required /></div>
+                                            <div className={classes.formGroup}><label htmlFor="loginInputEmail">E-MAIL *</label><input type="text" name="email" id="loginInputEmail" className={classes.formControl} placeholder="Enter E-mail" required /></div>
+                                            <div className={classes.formGroup}><label htmlFor="loginInputPassword">PASSWORD *</label><input type="password" name="password" className={classes.formControl} id="loginInputPassword" placeholder="Enter Password" required /></div>
+                                            <div className="row">
+                                                <div className="col-auto">
+                                                    <button className={classes.button}>REGISTER</button>
+                                                </div>
+                                                <div className="align-self-center col-auto">
+                                                    <div className={classes.formGroup}>
+                                                        <div className={classes.additionalLinks}>
+                                                            <div>or <a href="/shop">Return to Store</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> */}
+                                        {/* </form> */}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Container >
+
+    );
+
+
+};
+
+export default Register;

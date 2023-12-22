@@ -1,0 +1,120 @@
+.StartPage {
+    margin-left: 10px;
+    background: white;
+    display: 'flex';
+    flex-Direction: 'row';
+    justify-Content: 'center';
+    align-items: center;
+
+  }
+  
+    .button {
+
+      margin-left: '30%';
+      width: "300px";
+      margin-bottom: "40px";
+      background-color: "green";
+      color: "white";
+      margin: '5px';
+      background: 'transparent';
+      border: '2px solid ';
+      height: '60px';
+      padding-left: '29px';
+      padding-right: '29px';
+      font-size: '14px';
+      font-size: '400';
+      letter-spacing: '.03em';
+      border-radius: '6px';
+      /* hover: {
+        background-Color: '#191919';
+        color: '#fff';
+        borderColor: '#191919';
+        outline: 'none';
+      } */
+    }
+
+
+  .box1 {
+    text-align: center; 
+
+    margin: 250px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: 'flex';
+    background: white;
+    padding: 10px;
+  }
+
+  .box2 {
+    text-align: left; 
+
+    margin: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: 'flex';
+    background: white;
+    padding: 10px;
+  }
+  
+  html {
+    background: white;
+  }
+  
+
+  h1 { 
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 25px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: left; 
+  }
+  h2 { 
+    color: #111; 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 22px; 
+    font-weight: 320; 
+    line-height: 32px; 
+    margin: 0 0 10px; 
+    text-align: left; 
+  }
+  h3 { 
+    color: #111; 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 18px; 
+    font-weight: 320; 
+    line-height: 32px; 
+    margin: 0 0 10px; 
+    text-align: left; 
+  }
+
+  ol{
+    line-height: 32px; 
+    font-weight: 300; 
+    text-align: left; 
+  }
+  
+  p { 
+    color: #111; 
+    font-family: 'Helvetica Neue', 
+    sans-serif; 
+    font-size: 18px; 
+    line-height: 24px; 
+    margin: 0 0 24px; 
+    text-align: left; 
+    text-justify: inter-word; 
+  }
+
+  .consent {
+    color: #111; 
+    font-family: 'Helvetica Neue', 
+    sans-serif; 
+    font-size: 17px; 
+    line-height: 24px; 
+    margin: 0 0 24px; 
+    text-align: left; 
+    text-justify: inter-word; 
+  }
+
+  
